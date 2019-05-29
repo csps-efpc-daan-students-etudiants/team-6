@@ -18,15 +18,33 @@ High level, unsorted requirements for our evaluation app:
 * It would be nice if self-directed and branching learning on topics was supported.
 * The more platforms supported the better.  Ideally Apple, Android and web for devices.  At the minimum, web to increase chance that students have a compatible device.
 
-# Existing software options
+# Software options
+* [Classkick](#classkick): interactive classroom lesson teaching, assignments and feedback.
 * [GoClass](#goclass): classroom teaching assistant.  Allows teachers to plan and deliver interactive lessons.
 * [Moodle](#moodle): learning platform that provides educators, administrators and learners with a system to create personalised learning environments.
 * [Nearpod](#nearpod): interactive lessons with students, real-time feedback and post-session reports (data can be imported into LMS).
-* [Slido](#slido): capture questions, poll the class and perform brainstorming.
+* [Slido](#slido): interactive presentation tool.  Capture questions, poll the class and perform brainstorming.
 * [Socrative](#socrative): another interactive learning platform.  Seems more focused on supporting an existing lesson plan rather than managing the lesson plan content.
-* [Wooclap](#wooclap): similar features to `Sli.do`, but with more [interactive learning options](https://www.wooclap.com/en/features/votes/).
+* [Tophat](#tophat): education platform for college.  Includes customizable textbooks, in-class engagement/feedback, assignments and tests.
+* [Wooclap](#wooclap): interactive presentation tools with similar features to `Slido`.
 
 :warning: **Note:** the feature lists below were ~~shamelessly copied~~ sourced from the product websites.
+
+---
+
+## Classkick
+### Website:
+https://classkick.com/
+
+### Features:
+1. **Teachers preps an assignment:**
+Teachers add drawings, text, images, audio, links, and videos to provide instruction or create assessments. 
+2. **Students work on their devices:**
+In 1:1 or small group settings, students input drawings, text, images, or audio in response to teacher-created material. 
+3. **Everyone gives feedback:**
+Teachers provide individualized, real-time feedback or allow students to give each other anonymous feedback.
+4. **Teachers see everything:**
+Teachers can see who needs help and how students are progressing through the assignment.
 
 ---
 
@@ -35,8 +53,17 @@ High level, unsorted requirements for our evaluation app:
 https://goclass.com
 
 ### Features:
-https://goclass.com/#features
-
+1. **Teach**
+   * Design lesson plan
+   * Broadcast lesson to the classroom and student devices
+   * Interactive assessments of students during lessons
+   * Annotate slides and share student responses
+2. **Manage classroom:**
+   * Track attendence
+   * Capture learning analytics
+2. **Continue learning:**
+   * Review lessons
+   * Bookmark slides
 ---
 
 ## Moodle
@@ -93,10 +120,21 @@ https://nearpod.com/
 ### Features:
 * **Presentations:** 
 Create new slides or turn your Powerpoint, Google Slides, Sways or PDFs into interactive Nearpod presentations. 
-* **Engage your students on any device:** 
+* **Engage students on any device:** 
 Share synchronized lessons with students across devices. Includes interactive features such as quizzes, open-ended questions, videos, polls, drawing tools, etc.
 * **Assess student comprehension:** 
 Get real-time feedback and comprehensive post-session reports. Download report data and integrate it with your LMS.
+
+---
+
+## Slido
+### Website:
+https://www.sli.do/
+
+### Features:
+* Real-time questions, polls, brainstorming sessions and topic clouds.
+* Analystics for your audience (who asked the questions).
+* Integrates with slideshow software, Slack, videos and native apps.
 
 ---
 
@@ -114,12 +152,33 @@ https://socrative.com/
 
 ---
 
-## Slido
+## Top Hat
 ### Website:
-https://www.sli.do/
+https://tophat.com/
 
 ### Features:
-https://www.sli.do/features-questions
+* **Textbooks:** 
+   * Customizable textbooks (use existing or create new).
+   * Dynamic content
+   * Integrate quizzes/assignments
+   * View student progress and performance
+* **Classroom:**
+   * Create and present lessons
+   * Syncronized presentations between instructor and student devices
+   * Interactive questions/polling
+   * Track student responses
+   * Track attendance
+* **Tests:**
+   * Create and securely administer tests using student devices
+   * Auto-grade and track student result
+   * Anti-cheat features
+   * Upload results to a LMS
+* **Assignments:**
+   * Create and assign homework assignments
+   * Auto-grade and track student result
+   * Add interactive elements
+   * Tailor assignments to individual students or groups of students
+   * Provide real-time feedback
 
 ---
 
@@ -128,4 +187,18 @@ https://www.sli.do/features-questions
 https://www.wooclap.com/
 
 ### Features:
-https://www.wooclap.com/en/features/votes/
+Interactive questions and learning:
+* Multiple choice questions
+* Rate statements
+* Polling
+* Find the correct area on an image
+* Word cloud
+* Open Questions
+* Guess a number
+* Prioritisation of topics
+* Sorting
+* Matching
+* Fill in the blanks
+* Quick slides (add content to your presentation)
+* Brainstorming
+* Videos
