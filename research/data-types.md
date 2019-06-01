@@ -1,4 +1,13 @@
-# Data
+# Purpose
+* Outline explicit and implicit data we can get from assessment; and
+* correlations between data.
+
+# Data types
+
+## Calibration
+Benchmarking the speed the learner enters data:
+
+* When creating user profile, measure speed of data entry and form element interaction.
 
 ## Explicit
 Provided by the user.
@@ -62,7 +71,7 @@ How are these data types related to learning outcomes (or each other)
 # Causation
 ~~How are these data types indicators of successfully acquiring a competency~~ (needs work, potentially not needed or possible)
 
-:warning: **Note:** 
+:warning: **Notes:** 
 * Must be cautious of putting too much burden on the user.
 * Must be careful about making speed assumptions (may be accessibility concerns)
 * Must conform to GC standards on useability, language and accessibility
