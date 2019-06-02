@@ -53,7 +53,7 @@ Examples of [question types and sub-types](https://www.slideshare.net/geraldxdia
 * Single incorrect
 
 ## Likert scale
-* Scale of agreement/disagreement with a 
+* Scale of agreement/disagreement with a statement
 
 ## Multiple choice
 * 1 correct
@@ -102,3 +102,11 @@ Examples of [question types and sub-types](https://www.slideshare.net/geraldxdia
   * Audio
   * Video
   * Explained by the teacher
+* Open ended questions provide more chance to demonstrate deeper understanding of a topic.
+```javascript
+10 = ____ + 1  // one correct answer: 9
+```
+vs.
+```javascript
+10 = ________  // multiple correct answers: 10, 9 + 1, 8 + 2, 5 * 2, 50/5, etc.
+```
