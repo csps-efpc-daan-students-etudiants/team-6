@@ -1,0 +1,36 @@
+## This code describes the steps taken to obtain average count of instances to create and to view reports of learners who have completed training and the average time elapsed
+## between start of training and last usage of system, segmented by rank.
+
+## Relevant data was only obtained from the roughly XXX learners with known first days of training and last used dates
+
+## Merge the first sheet of the Report Usage file with the training file
+
+df2 <- df_usage
+df1 <- df_training
+
+my_data <- merge(df2, df1, by=c('UserId'), all.x = T)
+
+names(my_data) <- c("UserId", "Create", "View", "Last_Day", "First_Day", "Course", "L1", "Rank", "Location", "Provider") ##Assign user-defined names
+
+my_data$Last_Day <- round_date(my_data$Last_Day, unit = "day") 								## Strip time from date stamp
+my_data$First_Day <- round_date(my_data$First_Day, unit = "day")							## Strip time from date stamp
+
+my_data$Rank <- sapply(my_data$Rank, function(v) { if (is.character(v)) return(toupper(v)) else return(v)})		## Convert all ranks to uppercase
+
+my_data$dateDiff <- my_data$Last_Day - my_data$First_Day								## Create column with time elapsed
+
+## Calculate the mean instances for report creation and report viewing, by rank
+
+reports <- c(2,3,8)													## Create vector of indices for subsetting
+
+reportData <- my_data[, reports]											## Extract relevant columns from merged sheet
+
+aggMean <- aggregate(reportData, by = list(my_data$Rank), FUN = mean)							
+
+## Calculate the mean time elapsed between start of training and last time used
+
+dates <- c(8,11)													## Create vector of indices for subsetting
+
+dateDiffData <- reportData[, dates]											## Extract relevant columns from merged sheet
+
+aggDiffMean <- aggregate(dateDiffData, by = list(my_data$Rank), FUN = mean)
