@@ -64,3 +64,30 @@ aggDiffMean <- aggregate(dateDiffData, by = list(my_data$Rank), FUN = mean)
 10    MCPL   NA  53.666667 
 11     MWO   NA   6.666667 
 12      WO   NA 115.000000 
+
+
+## Add column with date the data was received
+
+my_data$dateReceived <- as.POSIXct(rep("2019-05-28", nrow(my_data)))
+
+my_data$daysSince <- my_data$dateReceived - my_data$Last_Day								## Calculate number of days since last use
+
+## Calculate mean time between 28 May 2019 and last time used, by rank
+
+recent <- c(8,13)													                              ## Create vector of indices
+recentData <- my_data[, recent]											                  	## Extract columns
+aggRecent <- aggregate(recentData, by = list(my_data$Rank), FUN = mean)							
+> aggRecent
+   Group.1 Rank  daysSince
+1      2LT   NA 200.16667 
+2     CAPT   NA 157.33333 
+3      CDR   NA 248.16667 
+4      CIV   NA 148.94131 
+5      CPL   NA  60.16667 
+6     LCDR   NA  90.16667 
+7     LCOL   NA 184.36667 
+8    LT(N)   NA  97.16667 
+9      MAJ   NA 110.71212 
+10    MCPL   NA 115.50000 
+11     MWO   NA 150.83333 
+12      WO   NA  61.16667 
