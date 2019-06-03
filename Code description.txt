@@ -34,3 +34,33 @@ dates <- c(8,11)													## Create vector of indices for subsetting
 dateDiffData <- reportData[, dates]											## Extract relevant columns from merged sheet
 
 aggDiffMean <- aggregate(dateDiffData, by = list(my_data$Rank), FUN = mean)
+
+> aggMean
+   Group.1    Create     View Rank
+1      2LT  15.00000 122.0000   NA
+2     CAPT  17.50000 115.0000   NA
+3      CDR  11.00000  64.0000   NA
+4      CIV        NA 161.0563   NA
+5      CPL 116.00000 119.0000   NA
+6     LCDR  13.50000 164.0000   NA
+7     LCOL  15.20000 145.8000   NA
+8    LT(N)  17.00000 188.0000   NA
+9      MAJ        NA 245.5455   NA
+10    MCPL  16.00000 250.0000   NA
+11     MWO  13.66667 272.6667   NA
+12      WO  43.00000 187.0000   NA
+
+> aggDiffMean
+   Group.1 Rank    dateDiff
+1      2LT   NA   4.000000 
+2     CAPT   NA  25.666667 
+3      CDR   NA   3.000000 
+4      CIV   NA  50.098592 
+5      CPL   NA  60.000000 
+6     LCDR   NA 149.000000 
+7     LCOL   NA   4.000000 
+8    LT(N)   NA 163.000000 
+9      MAJ   NA  66.363636 
+10    MCPL   NA  53.666667 
+11     MWO   NA   6.666667 
+12      WO   NA 115.000000 
