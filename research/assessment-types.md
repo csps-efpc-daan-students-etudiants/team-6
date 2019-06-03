@@ -71,12 +71,14 @@ Examples of [question types and sub-types](https://www.slideshare.net/geraldxdia
 
 ## Matching
 * Match related concepts
+* Imperfect matching (options that have no match)
 
 ## Fill in the blanks
 * Add missing word (freeform)
 * Add missing word (from list of options)
 * Add missing phrase (freeform)
 * Add missing phrase (from list of options)
+* Enumeration (provide list of missing options)
 
 ## Word association 
 * Provide word(s) related to a concept
@@ -94,6 +96,26 @@ Examples of [question types and sub-types](https://www.slideshare.net/geraldxdia
 ## Performance task (complete a task or assignment)
 * Complete task independently
 * Complete task while being observed
+
+# Data from question types
+The different types of assessment data we can get from capturing metrics on how learners answer questions.  
+
+:warning: All time evaluations should be based only on the learner's established pace.  This should allow us to isolate how effective the training was at the individual level. 
+
+## Explicit
+* Answer
+* Quality of the answer (in the case of non-binary questions)
+* Quality of answer compared to other questions within same module.
+
+## Implicit
+* Length of time between question load and answer entered (but not submitted).
+* Length of time between question load and answer submitted.
+* Total length of time to complete series of questions or assignment.
+* Length of time to answer questions when familiar topic.
+* Length of time to answer questions when unfamiliar topic.
+* Length of time to answer simple vs. complex questions.
+* Number of times revised answer.
+* Number of times revisted question.
 
 :warning: **Notes:** 
 
