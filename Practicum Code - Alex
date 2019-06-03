@@ -1,0 +1,89 @@
+#load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(tidyverse)
+
+## OTHER ##
+
+#join User and Training data. Include all UserIds in both data frames. 
+df <- merge(Users,TrainingData, by = "UserId", all = TRUE)
+summary(df)
+
+#result: There are more users who have accessed a report than have received training. There are 671 users who do not have a first day of course.  
+#result: there are 364 users who do not have a last date in the system
+#result: there are 358 users who do not have an ID
+#result: there are 825 users who have never created or revised a report
+#result: there are 366 users who have never viewed or refreshed a report
+
+df$diff_in_days<- as.numeric(difftime(df$LastDate ,df$CourseDate , units = c("days")))
+#1035 users have either not completed the training and/or have not used the report system
+
+#Count number of times someone has taken the course but not used the system, used the system but not taken the course, or has both taken the course and used the system
+Dates <- df[c(5,8)]
+Dates$Last <- as.numeric(Dates$LastDate)
+Dates$Course <- as.numeric (Dates$CourseDate)
+Dates$Last[is.na(Dates$Last)] <-0
+Dates$Course[is.na(Dates$Course)] <- 0
+
+Dates$Check <- case_when(
+  Dates$Last ==0 & Dates$Course == 0 ~ "Neither", 
+  Dates$Last >0 & Dates$Course ==0 ~ "Last", 
+  Dates$Last == 0 & Dates$Course > 0 ~ "Course", 
+  Dates$Last >0 & Dates$Course > 0 ~ "Both"
+  )
+DateChecks <- as.data.frame(table(Dates$Check))
+View(DateChecks)
+
+# Results
+# Both - 113
+# Course Only - 364
+# Report Only - 671
+
+df2 <- merge(Reports2, Users, by = "UserId", all = TRUE)
+
+#tidy data
+tidydf2 <-gather(df2, "Activity", "Count", 4:5)
+
+#plot type of usage by Level 1 Group, per user. Not the number of interactions. 
+ggplot(tidydf2, aes(x=Rank, y = Count, fill = Activity)) + geom_bar(stat = "identity", position = "dodge") + labs(x = "Level 1 Group") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))
+
+
+df3 <- merge(df2, TrainingData, by = "UserId", all = TRUE)
+tidydf3 <-gather(df3, "Activity", "Count", 4:5)
+ggplot(tidydf3, aes(x=Rank, y = Count, fill = Activity)) + geom_bar(stat = "identity", position = "dodge") + labs(x = "Rank") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))
+
+#Summarize the number of interactions had with each function by L1
+Interactions <- df %>% group_by(L1) %>% summarize(createsum = sum(CreateRevise, na.rm = TRUE), refreshsum = sum(RefreshView, na.rm = TRUE))
+
+#Join interaction data with training data by Level 1
+level1summary$L1 <- as.character(level1summary$Var1)
+whoshould <- merge(Interactions, level1summary, by = "L1", all =TRUE)
+whoshould$training <- whoshould$Freq
+whoshould <- subset(whoshould, training != "NA")
+
+tidywho <- gather(whoshould, "Activity", "Interactions", 2:3)
+
+#Plot who is doing which activities more often in the report writing software
+ggplot(tidywho, aes(x=L1, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Level 1 Group") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
+
+
+#Summarize the number of interactions had with each function by L1
+UserActivity <- df %>% group_by(L1) %>% summarize(createcount = count(CreateRevise, na.rm = TRUE), refreshcount = count(RefreshView, na.rm = TRUE))
+
+
+#summarize the number of users participating in each function by L1 (create/review, refresh/biew, training)
+#Create a table with L1 and training date
+UserActivity <- Training[c(1,3)]
+#Create a column with the Activity as "training"
+UserActivity$Activity <- "Training"
+#Set the training count to 1
+UserActivity$Count <- 1
+#Drop the course date
+UserActivity <- UserActivity[c(-1)]
+#From the tidy report data, drop unneccessary columns
+tidyreports3 <- tidyreports2[c(-2, -3, -4, -5)]
+#Join User Activity and Tidy Reports data together to get a tidy summary of the different functions by L1
+UserActivity <- rbind(UserActivity, tidyreports3)
+
+ggplot(UserActivity, aes(x=L1, y=Count, fill = Activity)) + geom_bar(stat="identity", position = "dodge")+ labs(x = "Level 1 Group") + scale_fill_discrete(name = "Activity", labels = c("Training", "Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
