@@ -3,7 +3,7 @@
 
 ## Relevant data was only obtained from the roughly XXX learners with known first days of training and last used dates
 
-## Merge the first sheet of the Report Usage file with the training file
+## Merge the first sheet of the Report Usage file with the training file. The 2 files were already read in and assigned variables
 
 df2 <- df_usage
 df1 <- df_training
