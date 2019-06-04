@@ -1,0 +1,31 @@
+body {
+    padding-top: 5rem;
+    background: #f7f7f7;
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+}
+
+.material-icons {
+    vertical-align: middle;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.navbar {
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    margin-right: .25rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #222;
+}

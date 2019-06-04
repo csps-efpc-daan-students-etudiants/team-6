@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>Data visualization examples</title>
+
+</head>
+
+<body vocab="http://schema.org/" typeof="WebPage">
+
+<ul id="skip" class="list-inline">
+    <li><a href="#cont" class="sr-only sr-only-focusable">Skip to content</a></li>
+</ul>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+
+    <header class="mb-4">
+        <h1>Data visualization examples</h1>
+        <nav typeof="SiteNavigationElement">
+
+        </nav>
+    </header>
+
+
+    <main property="mainContentOfPage">
+        
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Bar chart</h2>
+                    <canvas id="bar-chart" aria-label="Bar chart example" role="img"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Bar chart grouped</h2>
+                    <canvas id="bar-chart-grouped" aria-label="Bar chart grouped example" role="img"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-deck mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Polar chart</h2>
+                    <canvas id="polar-chart" aria-label="Polar chart example" role="img"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-deck mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Radar</h2>
+                    <canvas id="radar-chart" aria-label="Radar chart grouped example" role="img"></canvas>
+                </div>
+            </div>
+        </div>        
+
+        <div class="card-deck mt-4">   
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Mix chart</h2>
+                    <canvas id="mix-chart" aria-label="Mix chart example" role="img"></canvas>
+                </div>
+            </div>            
+        </div>        
+
+        <div class="card-deck mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Pie chart</h2>
+                    <canvas id="pie-chart" aria-label="Pie chart example" role="img"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Doughnut chart</h2>
+                    <canvas id="doughnut-chart" aria-label="Doughnut chart example" role="img"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-deck mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Line chart</h2>
+                    <canvas id="line-chart" aria-label="Line chart example" role="img"></canvas>
+                </div>
+            </div>
+        </div> 
+
+    </main>
+
+
+    <footer>
+
+    </footer>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+
+    // Bar chart
+    new Chart(document.getElementById('bar-chart'), {
+        type: 'bar',
+        data:{
+            labels: ['January','February','March','April','May','June','July'],
+            datasets:[{
+                label: 'My First Dataset',
+                data: [65,59,80,81,56,55,40],
+                fill: false,
+                backgroundColor: [
+                    '#51bda2', // green
+                    '#00aeef', // blue
+                    '#007cb0', // dark blue
+                    '#702b90', // purple
+                    '#ec125e', // red
+                    '#faa51a', // orange
+                    '#ffd400'  // yellow                    
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            ]
+        }
+    }});
+
+    // Bar chart grouped, horizontal
+    new Chart(document.getElementById('bar-chart-grouped'), {
+        type: 'horizontalBar',
+        data: {
+        labels: ['1900', '1950', '1999', '2050'],
+        datasets: [
+            {
+                label: 'Africa',
+                backgroundColor: '#007cb0',
+                data: [133,221,783,2478]
+            }, {
+                label: 'Europe',
+                backgroundColor: '#51bda2',
+                data: [408,547,675,734]
+            }
+        ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Population growth (millions)'
+            }
+        }
+    });
+
+    // Mixed chart
+    var labels = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+    ];
+    var revenues = [
+        20000,
+        14000,
+        12000,
+        15000,
+        18000,
+        19000,
+        22000
+    ];
+    var clients = [
+        201,
+        140,
+        80,
+        150,
+        190,
+        170,
+        202
+    ];
+    new Chart(document.getElementById("mix-chart"), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    type: 'line',
+                    label: "Revenues",
+                    data: revenues,
+                    borderWidth: 5,
+                    borderColor: '#ec125e',
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    yAxisID: 'revenues',
+                    lineTension: 0
+                },
+                {
+                    label: "Clients",
+                    data: clients,
+                    backgroundColor: '#00aeef',
+                    yAxisID: 'clients',
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [
+                    {
+                        id: "revenues",
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Revenues (U$)'
+                        }
+                    },
+                    {
+                        id: "clients",
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Clients'
+                        }
+                    },
+                ]
+            },
+        }
+    }); 
+    
+    // Radar
+    new Chart(document.getElementById("radar-chart"), {
+        type: 'radar',
+        data: {
+        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+        datasets: [
+            {
+                label: "2050",
+                fill: true,
+                backgroundColor: "rgba(0,169,148,0.5)",
+                borderColor: "rgba(0,169,148,1)",
+                pointBorderColor: "#fff",
+                pointBackgroundColor: "rgba(0,169,148,1)",
+                pointBorderColor: "#fff",
+                data: [25.48,54.16,7.61,8.06,4.45]
+            },          
+            {
+                label: "1950",
+                fill: true,
+                backgroundColor: "rgba(179,181,198,0.5)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                data: [8.77,55.61,21.69,6.62,6.82]
+            }
+        ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Distribution in % of world population'
+            }
+        }
+    });  
+
+    // Polar area
+    new Chart(document.getElementById("polar-chart"), {
+        type: 'polarArea',
+        data: {
+            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            datasets: [{
+                    label: "Population (millions)",
+                    backgroundColor: ["#007cb0", "#702b90", "#ec125e", "#faa51a", "#ffd400"],
+                    data: [2478,5267,734,784,433]
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });    
+
+    new Chart(document.getElementById('pie-chart'), {
+        type: 'pie',
+        data: {
+            labels: ['Red','Blue','Yellow'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300,50,100],
+                backgroundColor:[
+                    '#007cb0',
+                    '#00a994',
+                    '#faa51a'
+                ]}
+            ]
+        }
+    });
+
+    new Chart(document.getElementById('doughnut-chart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Red','Blue','Yellow'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300,50,100],
+                backgroundColor:[
+                    '#007cb0',
+                    '#00a994',
+                    '#faa51a'
+                ]}
+            ]
+        }
+    });
+
+    // Line chart
+    new Chart(document.getElementById('line-chart'), {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                borderColor: 'rgba(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            },
+            {
+                label: 'My second dataset',
+                backgroundColor: 'rgba(112, 43, 144, 0.7)',
+                borderColor: 'rgba(112, 43, 144)',
+                data: [25, 30, 25, 15, 40, 37, 32]
+            }]
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
