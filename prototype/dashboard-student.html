@@ -12,13 +12,13 @@
 
   <link rel="icon" type="image/png" href="img/logo.png" />
 
-  <title>Data literacy | Courses | Dashboard</title>
+  <title>Data literacy | Active courses | My courses</title>
 
 </head>
 
 <body vocab="http://schema.org/" typeof="WebPage">
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+<nav class="navbar fixed-top navbar-expand-md navbar-light">
     <a class="navbar-brand" href="#"><img src="img/logo.png" width="42" height="42" alt="EvalApp"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,7 +65,17 @@
     
 </nav>
 
-<div class="container-fluid mt-3">
+<nav class="navbar navbar-dark bg-dark d-md-block d-none">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="#competencies">Competencies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#progress-towards-competencies">Progress towards competencies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#course-progress">Course progress</a></li>
+        <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>        
+        <li class="nav-item"><a class="nav-link" href="#assignments">Assignments</a></li>                              
+    </ul>
+</nav>
+
+<div class="container-fluid mt-4">
 
     <header class="mb-4">
         <h1 class="mb-0">Data literacy</h1>
@@ -83,7 +93,7 @@
     <main property="mainContentOfPage">
 
         <!-- Competencies -->
-        <h2 class="mb-3">Competencies</h2>
+        <h2 class="mb-3" id="competencies">Competencies</h2>
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">                    
@@ -94,32 +104,44 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">62<sup class="display-4">%</sup></span>
+                    <span class="display-1 d-block">68<sup class="display-4">%</sup></span>
                     <span class="d-block">Progress</span>
                     <a href="">Analyze data (level 2)<span class="material-icons ml-1">warning</span></a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">79<sup class="display-4">%</sup></span>
+                    <span class="display-1 d-block">83<sup class="display-4">%</sup></span>
                     <span class="d-block">Progress</span>
                     <a href="">Visualize data (level 3)</a>
                 </div>
             </div>            
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">42<sup class="display-4">%</sup></span>
+                    <span class="display-1 d-block">63<sup class="display-4">%</sup></span>
                     <span class="d-block">Progress</span>
                     <a href="">Realize and use data (level 2)</a>
                 </div>
             </div>                            
         </div>
 
+        <!-- Progress towards competencies -->
+        <div class="card-deck mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title mb-4" id="progress-towards-competencies">Progress towards competencies</h2>
+                    <div style="height: 400px">
+                        <canvas id="module-grades-chart" aria-label="Student module grades" role="img"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
         <!-- Recommendations -->
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Course progress</h2>
+                    <h2 class="card-title" id="course-progress">Course progress</h2>
                     <div style="height: 300px">
                         <canvas id="overall-progress-chart" aria-label="Overall progress towards the goal" role="img"></canvas>
                     </div>
@@ -127,7 +149,7 @@
             </div>            
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Recommendations</h2>               
+                    <h2 class="card-title" id="recommendations">Recommendations</h2>               
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box</span>Start the business value unit.</a></li>
                         <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box_outline_blank</span>Try advanced data collection.</a>  You did great on this topic!</li>
@@ -138,23 +160,13 @@
             
         </div>        
         
-        <!-- Progress towards competencies -->
-        <div class="card-deck mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="card-title mb-4">Progress towards competencies</h2>
-                    <div style="height: 400px">
-                        <canvas id="module-grades-chart" aria-label="Student module grades" role="img"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Assignments -->
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title mb-4">Assignments and tests</h2>                    
+                    <h2 class="card-title mb-4" id="assignments">Assignments</h2>                    
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -253,7 +265,7 @@
             datasets: [{
                 data: [75,15,10],
                 backgroundColor:[
-                    'rgba(0, 166, 80, .8)',
+                    'rgba(0, 166, 80, 1)',
                     'rgba(1, 98, 175, .8)',
                     'rgb(200, 200, 200)'
                 ]}
@@ -290,7 +302,7 @@
                     label: 'My level',
                     backgroundColor: 'rgba(0, 166, 80, 0.8)',
                     borderWidth: 0,
-                    data: [90, 75, 83, 62],
+                    data: [93, 68, 83, 62],
                     lineTension: 0.3
                 },
                 {
