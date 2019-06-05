@@ -18,69 +18,72 @@
 
 <body vocab="http://schema.org/" typeof="WebPage">
 
-<nav class="navbar fixed-top navbar-expand-md navbar-light">
-    <a class="navbar-brand" href="#"><img src="img/logo.png" width="42" height="42" alt="EvalApp"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown mr-3">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My courses
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Active</a>
-                    <a class="dropdown-item" href="#">Upcoming</a>
-                    <a class="dropdown-item" href="#">Completed</a>
-                </div>
-            </li>
-            <li>
-                <form class="form-inline">
-                    <div class="input-group">
-                        <input type="search" class="form-control" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </div>
+<div class="fixed-top ">
+    <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="#"><img src="img/logo.svg" width="45" height="45" alt="EvalApp logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown mr-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My courses
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Active</a>
+                        <a class="dropdown-item" href="#">Upcoming</a>
+                        <a class="dropdown-item" href="#">Completed</a>
                     </div>
-                </form>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown mr-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="material-icons">account_circle</span> Jane Doe
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Profile</a>
-                    <a class="dropdown-item" href="#">Sign out</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a href="" class="btn btn-outline-secondary">Français</a>
-            </li>
-        </ul>
-    </div>
-    
-</nav>
+                </li>
+                <li>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="search" class="form-control" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="material-icons">account_circle</span> Jane Doe
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Sign out</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="btn btn-outline-secondary">Français</a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
 
-<nav class="navbar navbar-dark bg-dark d-md-block d-none">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" href="#competencies">Competencies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#progress-towards-competencies">Progress towards competencies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#course-progress">Course progress</a></li>
-        <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>        
-        <li class="nav-item"><a class="nav-link" href="#assignments">Assignments</a></li>                              
-    </ul>
-</nav>
+    <nav class="navbar navbar-dark bg-dark d-md-block d-none">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#competencies">Competencies</a></li>
+            <li class="nav-item active"><a class="nav-link" href="#recommendations">Recommendations <span class="badge badge-primary">3</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#assignments">Assignments</a></li>            
+        </ul>
+    </nav>
+</div>
 
 <div class="container-fluid mt-4">
 
     <header class="mb-4">
-        <h1 class="mb-0">Data literacy</h1>
+        <h1 class="mb-0">
+            Data literacy 
+
+        </h1>
         <nav aria-label="breadcrumb mt-0">
-            <ul class="list-inline">
+            <ul class="list-inline ml-1">
                 <li class="list-inline-item mr-0">
                     <a href="">My courses</a>
                     <span class="material-icons text-muted">chevron_right</span>
@@ -97,29 +100,29 @@
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">                    
-                    <span class="display-1 d-block">93<sup class="display-4">%</sup></span>
-                    <span class="d-block">Progress</span>
+                    <span class="display-1 d-block font-weight-normal">93<sup class="display-4">%</sup></span>
+                    <span class="d-block">Progress towards</span>
                     <a href="">Collect and clean data (level 1)</a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">68<sup class="display-4">%</sup></span>
-                    <span class="d-block">Progress</span>
+                    <span class="display-1 d-block font-weight-normal">68<sup class="display-4">%</sup></span>
+                    <span class="d-block">Progress towards</span>
                     <a href="">Analyze data (level 2)<span class="material-icons ml-1">warning</span></a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">83<sup class="display-4">%</sup></span>
-                    <span class="d-block">Progress</span>
+                    <span class="display-1 d-block font-weight-normal">79<sup class="display-4">%</sup></span>
+                    <span class="d-block">Progress towards</span>
                     <a href="">Visualize data (level 3)</a>
                 </div>
             </div>            
             <div class="card">
                 <div class="card-body">
-                    <span class="display-1 d-block">63<sup class="display-4">%</sup></span>
-                    <span class="d-block">Progress</span>
+                    <span class="display-1 d-block font-weight-normal">63<sup class="display-4">%</sup></span>
+                    <span class="d-block">Progress towards</span>
                     <a href="">Realize and use data (level 2)</a>
                 </div>
             </div>                            
@@ -129,7 +132,10 @@
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title mb-4" id="progress-towards-competencies">Progress towards competencies</h2>
+                    <div class="d-flex">
+                        <h2 class="card-title mb-4 mr-auto" id="progress-towards-competencies">Progress towards competencies</h2>
+                        <div class="text-muted"><a href="">View data</a></div>
+                    </div>
                     <div style="height: 400px">
                         <canvas id="module-grades-chart" aria-label="Student module grades" role="img"></canvas>
                     </div>
@@ -137,11 +143,14 @@
             </div>
         </div>        
 
-        <!-- Recommendations -->
+        <!-- Assignment progress and Recommendations -->
         <div class="card-deck mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title" id="course-progress">Course progress</h2>
+                    <div class="d-flex">
+                        <h2 class="card-title mb-4 mr-auto" id="course-progress">Assignment progress</h2>
+                        <div class="text-muted"><a href="">View data</a></div>
+                    </div>                    
                     <div style="height: 300px">
                         <canvas id="overall-progress-chart" aria-label="Overall progress towards the goal" role="img"></canvas>
                     </div>
@@ -152,11 +161,20 @@
                     <h2 class="card-title" id="recommendations">Recommendations</h2>               
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box</span>Start the business value unit.</a></li>
-                        <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box_outline_blank</span>Try advanced data collection.</a>  You did great on this topic!</li>
-                        <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box_outline_blank</span>Work on pattern recognition.</a> This concept was a bit tough for you.</li>
+                        <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box_outline_blank</span>Try advanced data collection.</a>  You were great at this!</li>
+                        <li class="list-group-item pl-0 pr-0"><a href=""><span class="material-icons mr-2">check_box_outline_blank</span>Work on pattern recognition.</a> This concept was tough.</li>
                     </ul>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title" id="recommendations">Instructor</h2> 
+                    <p>
+                        This course is being taught by Dr. Flynn, who holds a Ph.D in Data Science from the University of Waterloo.<br>
+                        <a href="" class="btn btn-primary mt-3">Ask a question</a>
+                    </p>
+                </div>
+            </div>            
             
         </div>        
         
@@ -220,7 +238,7 @@
                                     <td> 
                                         <span class="float-right ml-2">75%</span>                                      
                                         <div class="progress mt-1">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </td>
                                     <td class="text-right">In progress</td>
@@ -245,12 +263,24 @@
         
     </main>
 
-    <footer>
+    <footer class="mt-5 mb-3 border-top">
 
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link pl-0 ml-0" href="#">Contact us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Terms and conditions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 mt-4 text-right">
+                <a herf=""><img src="img/logo.svg" width="48" height="48" alt="EvalApp logo"></a>
+            </div>
+        </div>
+    
     </footer>
 
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -302,7 +332,7 @@
                     label: 'My level',
                     backgroundColor: 'rgba(0, 166, 80, 0.8)',
                     borderWidth: 0,
-                    data: [93, 68, 83, 62],
+                    data: [93, 68, 79, 62],
                     lineTension: 0.3
                 },
                 {

@@ -1,5 +1,5 @@
 body {
-    padding-top: 4.2rem;
+    padding-top: 8rem;
     background: #f7f7f7;
 }
 
@@ -17,7 +17,7 @@ body {
     vertical-align: middle;
 }
 
-.navbar {
+.navbar-light {
     background: #f7f7f7;
     border-bottom: 1px solid #ddd;
 }
@@ -38,15 +38,36 @@ body {
     flex-direction: row;
 }
 
-.nav-item {
+.navbar-nav .nav-item {
     margin-right: 1.5rem;
+}
+
+.progress-bar {
+    background-color: #3481bf;
+}
+
+.badge {
+    border-radius: 10px;
 }
 
 h2[id]::before{
     display: block;
     content: " ";
-    margin-top: -5rem;
-    height: 5rem;
+    margin-top: -9rem;
+    height: 9rem;
     visibility: hidden;
     pointer-events: none;
+}
+
+.bg-success {
+    background-color: #00a650 !important;
+}
+
+.text-muted a {
+    color: rgba(0,0,0,.55);
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
 }
