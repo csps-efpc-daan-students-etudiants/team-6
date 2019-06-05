@@ -1,0 +1,48 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="188" height="188" viewBox="0 0 188 188">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #33b873;
+      }
+
+      .cls-2, .cls-6, .cls-7, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #60d698;
+      }
+
+      .cls-5 {
+        fill: #4c28b4;
+        filter: url(#filter);
+      }
+
+      .cls-6 {
+        opacity: 0.5;
+      }
+
+      .cls-7 {
+        opacity: 0.7;
+      }
+    </style>
+    <filter id="filter" x="0.5" y="0.5" width="186.125" height="186.063" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="0.5" y="0.5" width="186.125" height="186.063" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTg2LjEyNSIgaGVpZ2h0PSIxODYuMDYzIiB2aWV3Qm94PSIwIDAgMTg2LjEyNSAxODYuMDYzIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjkzLjA2MyIgeTE9IjE4Ni4wNjMiIHgyPSI5My4wNjMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2MwMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzNjMDBmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxODYuMTI1IiBoZWlnaHQ9IjE4Ni4wNjMiLz4KPC9zdmc+Cg=="/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <circle id="circle" class="cls-1" cx="93.563" cy="93.531" r="93.063"/>
+  <path id="leaf_foreground" data-name="leaf foreground" class="cls-2" d="M147.122,53.87s2.271,26.849-15.731,44.85c-14.827,14.827-38.383,7.677-38.383,7.677s-5.564-25.143,7.677-38.384C115.512,53.186,147.122,53.87,147.122,53.87Z"/>
+  <path id="leaf_background" data-name="leaf background" class="cls-3" d="M39.878,71.87s-2.271,26.849,15.731,44.85c14.827,14.827,38.383,7.677,38.383,7.677s5.564-25.143-7.677-38.384C71.488,71.186,39.878,71.87,39.878,71.87Z"/>
+  <path id="veins" class="cls-4" d="M96.337,124.424l-2.094,1.525L47.909,82.783,50,81.257Zm-47.4-43.705a1.25,1.25,0,1,1-1.25,1.25A1.25,1.25,0,0,1,48.938,80.719Z"/>
+  <path id="stem" class="cls-2" d="M91.681,93.779H96.7v57.709H91.681V93.779ZM94.2,148.688a2.469,2.469,0,1,1-2.484,2.468A2.476,2.476,0,0,1,94.2,148.688Z"/>
+  <circle id="circle-2" data-name="circle" class="cls-5" cx="93.563" cy="93.531" r="93.063"/>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-6" x="50" y="97.438" width="22" height="50.563" rx="10" ry="10"/>
+  <rect id="Rounded_Rectangle_1-2" data-name="Rounded Rectangle 1" class="cls-7" x="81" y="80.031" width="22" height="67.969" rx="10" ry="10"/>
+  <rect id="Rounded_Rectangle_1-3" data-name="Rounded Rectangle 1" class="cls-8" x="112" y="53.875" width="22" height="94.125" rx="10" ry="10"/>
+</svg>

@@ -1,6 +1,13 @@
-body {
-    padding-top: 8rem;
+body {    
     background: #f7f7f7;
+}
+
+body.nav-fixed {
+    padding-top: 4.2rem;
+}
+
+body.nav-fixed.nav-submenu {
+    padding-top: 8rem;
 }
 
 .card {
@@ -42,8 +49,9 @@ body {
     margin-right: 1.5rem;
 }
 
-.progress-bar {
-    background-color: #3481bf;
+.navbar-toggler {
+    border: 0;
+    color: #222;
 }
 
 .badge {
@@ -67,7 +75,18 @@ h2[id]::before{
     color: rgba(0,0,0,.55);
 }
 
-.flex-break {
-    flex-basis: 100%;
-    height: 0;
+
+.ml-3-neg {
+    margin-left: -20px;
+}
+
+.mr-3-neg {
+    margin-right: -20px;
+}
+
+@media (max-width: 575.98px) {
+    .card-deck {
+        margin-left: -17px;
+        margin-right: -17px;
+    }
 }
