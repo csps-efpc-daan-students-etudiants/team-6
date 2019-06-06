@@ -20,10 +20,13 @@ summary(Training)
 #result: 34 have a first day of course in the year 9999
 #result: 46 do not have a rank
 
+Create <- read.csv("~/Practicum/Create2.csv", header=TRUE, stringsAsFactors = FALSE)
+
 #convert UserID to character field in all original files
 Users %>% mutate_if(is.factor, as.character) -> Users
 Reports %>% mutate_if(is.factor, as.character) -> Reports
 Training %>% mutate_if(is.factor, as.character) -> Training
+Create %>% mutate_if(is.factor, as.character) -> Create
 
 #Clean data - convert all character fields to all capital letters
 Users <- data.frame(lapply(Users, function(v) {
@@ -41,10 +44,17 @@ Training <- data.frame(lapply(Training, function(v) {
   else return(v)
 }))
 
+Create <- data.frame(lapply(Create, function(v) {
+  if (is.character(v)) return(toupper(v))
+  else return(v)
+}))
+
 #Convert dates, change column names to be simpler
 Users$LastDate <- as.Date(Users$Last.Used.Date, format = "%d/%m/%Y")
 Reports$LastDate <- as.Date(Reports$Last.Used.Date, format = "%d/%m/%Y")
 Training$CourseDate <- as.Date(Training$First.Day.of.Course, format = "%d %b %Y")
+Create$UserRequestDate <- as.Date(Create$User.Request.Date, format = "%m/%d/%Y")
+Create$TTDate <- as.Date(Create$Date.TT.Completed, format = "%m/%d/%Y")
 
 #Change field names for simplicity
 Users$CreateRevise <- Users$Create.or.Revise.Count
@@ -65,7 +75,7 @@ max(Users$Refresh.or.View.Count, na.rm = TRUE)
 tidyusers <-gather(Users, "Activity", "Count", 6:7)
 
 #plot number of people who are creating and revising reports vs. refreshing and viewing reports over time, by last date tehy accessed the system. This would be more useful if we had the date of EACH access to the system. Or if we could graph the first and last. Or frequency. 
-ggplot(tidyusers, aes(x = LastDate, y = Count)) + geom_point(aes(color = Activity)) + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + labs(x="Last Access Date, 2018-2019")+ scale_x_date(breaks = date_breaks("months"), labels = date_format("%b"))
+ggplot(tidyusers, aes(x = LastDate, y = Count)) + geom_point(aes(color = Activity)) + scale_color_manual(name = "Activity", labels = c("Create or Revise", "Refresh or View"), values = c("gray45", "magenta1")) + labs(x="Last Access Date, 2018-2019")+ scale_x_date(breaks = date_breaks("months"), labels = date_format("%b"))
 
 #463 users have only done one of Create/Review or Refresh/View
 
@@ -79,10 +89,6 @@ ReportWho <- as.data.frame(table(Reports$L1, Reports$UserId))
 ReportWho <- subset(ReportWho, Freq>0)
 names(ReportWho) <- c("L1", "UserId", "Freq")
 
-#How many interactions people in each Level 1 have with the software
-ReportInteractions <- as.data.frame(table(Reports$L1))
-ggplot(ReportInteractions, aes(x=Var1, y = Freq)) + geom_bar(stat = "identity") + labs(x = "Level 1 Group", y = "Interactions", title = "Number of Interactions with the Report Software by Level 1") + theme(axis.text.x = element_text(size = 10,angle = 45, hjust = 1, vjust = 1))+ scale_y_continuous(breaks = scales::pretty_breaks(n = 10))
-
 # Plot how many people are accessing the software in each L1 - not the number of times they are using the software
 ggplot(ReportWho, aes(L1)) + geom_bar() + labs(x = "Level 1 Group", y = "Interactions", title = "Number of Users by Level 1")+ theme(axis.text.x = element_text(size = 10,angle = 45, hjust = 1, vjust = 1))+scale_y_continuous(breaks = scales::pretty_breaks(n = 10))
 
@@ -91,7 +97,7 @@ tidyreports <-gather(Reports, "Activity", "Count", 4:5)
 tidyreports2 <- subset(tidyreports, tidyreports$Count>0)
 
 #plot type of usage by Level 1 Group, by unique users
-ggplot(tidyreports, aes(x=L1, y = Count, fill = Activity)) + geom_bar(stat = "identity", position = "dodge") + labs(x = "Level 1 Group") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))
+ggplot(tidyreports, aes(x=L1, y = Count, fill = Activity)) + geom_bar(stat = "identity", position = "dodge") + labs(x = "Level 1 Group", title = "Number of Users by Activity and L1") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))
 
 
 #Clean data - convert all character fields to all capital letters
@@ -105,7 +111,7 @@ Cohorts$CourseDate <- Cohorts$Var1
 Cohorts$CohortSize <- Cohorts$Freq
 Cohorts <- subset(Cohorts, select = c(3:5))
 
-as.data.frame(Cohorts)
+Cohorts <- as.data.frame(Cohorts)
 
 #Convert dates to a useable format
 Cohorts$CourseDate <- as.Date.factor(Cohorts$CourseDate, format = "%Y-%m-%d")
@@ -120,7 +126,7 @@ TrainingLevel <- as.data.frame(table(TrainingData$L1))
 ggplot(TrainingData, aes(Rank)) + geom_bar() + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1)) + labs(x = "Rank", title = "Number of people in each Rank who have completed training")
 
 #Plot the number of people in each cohort
-ggplot(TrainingData, aes(cohort)) + geom_bar()+ theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1)) + labs(x = "Rank", title = "Number of people in each training class")
+ggplot(TrainingData, aes(cohort)) + geom_bar()+ theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1)) + labs(x = "Cohort", title = "Number of people in each training class")
 
 #Plot the number of people in each L1 taking training
 ggplot(TrainingData, aes(L1)) + geom_bar() + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1)) + labs(x = "Level 1 Group", title = "Number of people in each Level 1 who have taken the training")
@@ -133,17 +139,12 @@ names(who2) <- c("L1", "UserId", "Rank", "Freq")
 #Plot people taking training, by L1 and Rank
 ggplot(who2, aes(x=L1, y = Freq, fill = Rank)) + geom_bar(stat="identity", position = "dodge")+ theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1)) + labs(x = "Rank")
 
-#Create a summary table of the number of people in each L1 and Rank taking the training
-whotraining <- as.data.frame(table(who2$L1, who2$Rank))
-whotraining <- subset(whotraining, Freq>0)
-names(whotraining) <- c("L1", "Rank", "Freq")
-
-#Plot who is taking the training, by Rank and L1. Attempt to facet and make readable. 
-ggplot(whotraining, aes(x=L1, y = Freq)) + geom_bar(stat="identity")  + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))+ facet_wrap(~ Rank, ncol = 5)
+ggplot(who2, aes(x=L1, y = Freq)) + geom_bar(stat="identity")  + theme(axis.text.x = element_text(size= 10, angle = 45, hjust = 1, vjust = 1))+ facet_wrap(~ Rank, ncol = 5)
 
 #join User and Training data. Include all UserIds in both data frames. 
 df <- merge(Users,TrainingData, by = "UserId", all = TRUE)
 df$L1 <- as.character(df$L1)
+summary(df)
 
 #result: There are more users who have accessed a report than have received training. There are 671 users who do not have a first day of course.  
 #result: there are 364 users who do not have a last date in the system
@@ -201,6 +202,18 @@ tidyInteractions2 <- gather(Interactions2, "Activity", "Interactions", 2:3)
 #Plot who is doing which activities more often in the report writing software. Interactions. 
 ggplot(tidyInteractions2, aes(x=L1, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Level 1 Group", title = "Number of interactions, by type and Level 1") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
 
+#Calculate number of interactions by rank, as able
+df3$Rank2 <- fct_explicit_na(df3$Rank)
+Interaction3 <- df3 %>% group_by(Rank2) %>% summarize(createsum = sum(CreateRevise, na.rm=TRUE), refreshsum = sum(RefreshView, na.rm = TRUE))
+tidyInteractions3 <- gather(Interaction3, "Activity", "Interactions", 2:3)
+
+
+#Remove missing data
+tidyInteractions3 <- subset(tidyInteractions3, Rank2 != "(Missing)")
+tidyInteractions3 <- subset(tidyInteractions3, Rank2 != "")
+ggplot(tidyInteractions3, aes(x=Rank2, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Rank", title = "Number of interactions, by type and Rank") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
+
+
 #summarize the number of users participating in each function by L1 (create/review, refresh/biew, training)
 #Create a table with L1 and training date
 UserActivity <- Training[c(1,3)]
@@ -216,3 +229,19 @@ tidyreports3 <- tidyreports2[c(-2, -3, -4, -5)]
 UserActivity <- rbind(UserActivity, tidyreports3)
 
 ggplot(UserActivity, aes(x=L1, y=Count, fill = Activity)) + geom_bar(stat="identity", position = "dodge")+ labs(x = "Level 1 Group", title = "Number of users who have completed training or use the software") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View", "Training")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
+
+#Summary of how many users from each L1 are completing each activity
+UserSummary <- as.data.frame(table(UserActivity$L1, UserActivity$Activity))
+
+#Create a table to summarize the roles by Rank and L1
+Role <- as.data.frame(table(Create$Rank, Create$L1, Create$Role))
+Role <- subset(Role, Freq>0)
+names(Role) <- c("Rank", "L1", "Role", "Freq")
+
+ggplot(Role, aes(x=Role, y = Freq, fill = L1)) + geom_bar(stat="identity", position = "dodge")+ theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1)) + labs(title = "Number of people in each role by L1 group")
+
+ggplot(Role, aes(x=L1, y = Freq, fill = Role)) + geom_bar(stat="identity", position = "dodge")+ theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1)) + labs(title = "Number of people in each role by L1 group")
+
+ggplot(Role, aes(x=Rank, y = Freq, fill = Role)) + geom_bar(stat="identity", position ="dodge")+ theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1)) + labs(title = "Number of people in each role by Rank")
+
+ggplot(Role, aes(x=Role, y = Freq, fill = Rank)) + geom_bar(stat="identity", position ="dodge")+ theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1)) + labs(title = "Number of people in each role by Rank")
