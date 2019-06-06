@@ -1,7 +1,12 @@
+/*
+ * Bootstrap overrides
+ */
+
 body {    
     background: #f7f7f7;
 }
 
+/* Make space for pages with a fixed position top menu */
 body.nav-fixed {
     padding-top: 4.2rem;
 }
@@ -10,20 +15,17 @@ body.nav-fixed.nav-submenu {
     padding-top: 8rem;
 }
 
-.card {
-    border: 0;
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+/* Stop headings with anchor links from being overlapped by a fixed menu */
+.nav-fixed h2[id]::before{
+    display: block;
+    content: " ";
+    margin-top: -9rem;
+    height: 9rem;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.material-icons {
-    vertical-align: middle;
-    height: 24px;
-    width: 24px;
-    overflow: hidden;
-    vertical-align: middle;
-}
-
+/* Top nav bar */
 .navbar-light {
     background: #f7f7f7;
     border-bottom: 1px solid #ddd;
@@ -54,17 +56,17 @@ body.nav-fixed.nav-submenu {
     color: #222;
 }
 
-.badge {
-    border-radius: 10px;
+/* Fix FOC as material icons load */
+.material-icons {
+    vertical-align: middle;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    vertical-align: middle;
 }
 
-h2[id]::before{
-    display: block;
-    content: " ";
-    margin-top: -9rem;
-    height: 9rem;
-    visibility: hidden;
-    pointer-events: none;
+.badge {
+    border-radius: 10px;
 }
 
 .bg-success {
@@ -75,13 +77,19 @@ h2[id]::before{
     color: rgba(0,0,0,.55);
 }
 
-
 .ml-3-neg {
     margin-left: -20px;
 }
 
 .mr-3-neg {
     margin-right: -20px;
+}
+
+/* White content cards */
+.card {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
 }
 
 @media (max-width: 575.98px) {
