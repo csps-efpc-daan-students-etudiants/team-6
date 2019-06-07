@@ -1,21 +1,25 @@
+# Prerequisite
+You will need [Node.js with npm](https://nodejs.org/en/download/) installed to build and run the project.
+
 # Install
 Run the following to install the project dependencies:
 ```bash
+# Downloads all required dependencies
 npm install
 ```
 # Local development
 You can use the Webpack dev server for local development on your machine:
 ```bash
+# Starts the Webpack dev server at http://localhost:8080
 npm start
 ```
-Once the server is running, you can access the pages from `http://localhost:8080`.
 
 # Build production assets
 If you want to build the CSS/JS assets to deploy to a server, use:
 ```bash
+# Creates CSS/JS/font bundles in ./dist folder
 npm run build
 ```
-The CSS/JS bundles and fonts will be put in the `./dist` folder.
 
 # Dependencies
 The prototype uses the following:
