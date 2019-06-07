@@ -1,5 +1,4 @@
 # Author: Alex MacDonald
-
 #load libraries
 library(dplyr)
 library(tidyr)
@@ -202,7 +201,7 @@ Interactions2 <- Interactions[3:27,]
 tidyInteractions2 <- gather(Interactions2, "Activity", "Interactions", 2:3)
 
 #Plot who is doing which activities more often in the report writing software. Interactions. 
-ggplot(tidyInteractions2, aes(x=L1, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Level 1 Group", title = "Number of interactions, by type and Level 1") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
+ggplot(tidyInteractions2, aes(x=L1, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Level 1 Group", title = "Number of interactions, by type and Level 1") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + scale_y_continuous(breaks = scales::pretty_breaks(n = 10)) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
 
 #Calculate number of interactions by rank, as able
 df3$Rank2 <- fct_explicit_na(df3$Rank)
@@ -213,7 +212,7 @@ tidyInteractions3 <- gather(Interaction3, "Activity", "Interactions", 2:3)
 #Remove missing data
 tidyInteractions3 <- subset(tidyInteractions3, Rank2 != "(Missing)")
 tidyInteractions3 <- subset(tidyInteractions3, Rank2 != "")
-ggplot(tidyInteractions3, aes(x=Rank2, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Rank", title = "Number of interactions, by type and Rank") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1))
+ggplot(tidyInteractions3, aes(x=Rank2, y = Interactions, fill = Activity)) + geom_bar(stat="identity", position = "dodge") + labs(x = "Rank", title = "Number of interactions, by type and Rank") + scale_fill_discrete(name = "Activity", labels = c("Create or Revise", "Refresh or View")) + theme(axis.text.x = element_text(size = 10, angle = 45, hjust = 1, vjust = 1)) + scale_y_continuous(breaks = scales::pretty_breaks(n = 10))
 
 
 #summarize the number of users participating in each function by L1 (create/review, refresh/biew, training)
