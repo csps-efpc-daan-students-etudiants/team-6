@@ -1,42 +1,44 @@
+@import "~bootstrap/scss/bootstrap";
+
 /*
  * Bootstrap overrides
  */
 
 body {    
     background: #f7f7f7;
-}
 
-/* Make space for pages with a fixed position top menu */
-body.nav-fixed {
-    padding-top: 4.2rem;
-}
+    /* Make space for pages with a fixed position top menu */
+    &.nav-fixed {
+        padding-top: 4.2rem;
 
-body.nav-fixed.nav-submenu {
-    padding-top: 8rem;
-}
+        /* Stop headings with anchor links from being overlapped by a fixed menu */
+        h2[id]::before{
+            display: block;
+            content: " ";
+            margin-top: -9rem;
+            height: 9rem;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
 
-/* Stop headings with anchor links from being overlapped by a fixed menu */
-.nav-fixed h2[id]::before{
-    display: block;
-    content: " ";
-    margin-top: -9rem;
-    height: 9rem;
-    visibility: hidden;
-    pointer-events: none;
+    &.nav-fixed.nav-submenu {
+        padding-top: 8rem;
+    }    
 }
 
 /* Top nav bar */
 .navbar-light {
     background: #f7f7f7;
     border-bottom: 1px solid #ddd;
+
+    .navbar-nav .nav-link {
+        color: #222;
+    }
 }
 
 .navbar-brand {
     margin-right: .25rem;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: #222;
 }
 
 .navbar-dark .navbar-nav .nav-link {
