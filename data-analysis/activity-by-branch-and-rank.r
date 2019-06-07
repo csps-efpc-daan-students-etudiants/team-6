@@ -1,3 +1,5 @@
+# Author: Alex MacDonald
+
 #load libraries
 library(dplyr)
 library(tidyr)

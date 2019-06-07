@@ -1,3 +1,5 @@
+# Author: Jason Albino
+
 ## This code describes how the different plots were created
 
 ## Bar Chart for create

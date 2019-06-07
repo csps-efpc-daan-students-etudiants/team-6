@@ -1,3 +1,5 @@
+# Author: Jason Albino
+
 ## This code describes the steps taken to obtain average count of instances to create and to view reports of learners who have completed training and the average time elapsed
 ## between start of training and last usage of system, segmented by rank.
 
