@@ -3,7 +3,7 @@
 ## This code describes the steps taken to obtain average count of instances to create and to view reports of learners who have completed training and the average time elapsed
 ## between start of training and last usage of system, segmented by rank.
 
-## Relevant data was only obtained from the roughly XXX learners with known first days of training and last used dates
+## Relevant data was only obtained from the 113 learners with known first days of training and last used dates
 
 ## Merge the first sheet of the Report Usage file with the training file. The 2 files were already read in and assigned variables
 
