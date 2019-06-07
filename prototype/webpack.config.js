@@ -8,7 +8,8 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: 'dist/'
   },
   module: {
     rules: [
@@ -53,6 +54,7 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "fonts/[name].[ext]",
+            publicPath: '.'
           },
         },
       },      
@@ -61,5 +63,10 @@ module.exports = {
   plugins: [
     // Only load the English/French locales for Chart.js
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|fr/)
-  ]  
+  ],
+  // Configure webpack dev server to serve compressed assets 
+  devServer: {
+    compress: true,
+    port: 8080
+  }
 };
