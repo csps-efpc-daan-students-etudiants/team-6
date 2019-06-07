@@ -1,11 +1,14 @@
-@import "~bootstrap/scss/bootstrap";
+$body-bg: #f7f7f7;
+$material-icons-font-path: '~material-icons/iconfont/';
+
+@import '~bootstrap/scss/bootstrap';
+@import '~material-icons/iconfont/material-icons.scss';
 
 /*
  * Bootstrap overrides
  */
 
 body {    
-    background: #f7f7f7;
 
     /* Make space for pages with a fixed position top menu */
     &.nav-fixed {
@@ -42,7 +45,7 @@ body {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,.6);
+    color: #ccc;
 }
 
 .navbar-nav {
