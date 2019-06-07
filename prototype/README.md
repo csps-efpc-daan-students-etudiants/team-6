@@ -8,13 +8,14 @@ You can use the Webpack dev server for local development on your machine:
 ```bash
 npm start
 ```
+Once the server is running, you can access the pages from `http://localhost:8080`.
 
 # Build production assets
 If you want to build the CSS/JS assets to deploy to a server, use:
 ```bash
 npm run build
 ```
-The bundles and fonts will be put in the `./dist` folder.
+The CSS/JS bundles and fonts will be put in the `./dist` folder.
 
 # Dependencies
 The prototype uses the following:
