@@ -151,21 +151,6 @@ User119
 > reportData2 <- df6[, reports]
 > aggCreate <- aggregate(reportData2, by=list(reportData2$Rank), FUN = mean)
 
-> aggCreate
-   Group.1    Create     View Rank
-1      2LT  15.00000 122.0000   NA
-2     CAPT  17.50000 115.0000   NA
-3      CDR  11.00000  64.0000   NA
-4      CIV        NA 161.0563   NA
-5      CPL 116.00000 119.0000   NA
-6     LCDR  13.50000 164.0000   NA
-7     LCOL  15.20000 145.8000   NA
-8    LT(N)  17.00000 188.0000   NA
-9      MAJ        NA 245.5455   NA
-10    MCPL  16.00000 250.0000   NA
-11     MWO  13.66667 272.6667   NA
-12      WO  43.00000 187.0000   NA
-
 aggCreate <- aggregate(reportData2, by=list(reportData2$Rank), FUN = mean, na.rm = T)
 > aggCreate
    Group.1    Create     View Rank
