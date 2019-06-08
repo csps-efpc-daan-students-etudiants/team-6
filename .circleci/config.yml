@@ -27,6 +27,10 @@ jobs:
           command: |
             cd ./prototype
             npm install
+            npm run build
+      - store_artifacts:
+          path: /tmp/workspace/prototype/dist
+          destination: dist            
       - *persist_to_workspace
 
   # Security audits with npm audit
