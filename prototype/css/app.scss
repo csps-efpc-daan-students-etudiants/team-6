@@ -40,25 +40,24 @@ body {
     }
 }
 
-.navbar-brand {
-    margin-right: .25rem;
-}
-
 .navbar-dark .navbar-nav .nav-link {
     color: #ccc;
 }
 
 .navbar-nav {
     flex-direction: row;
-}
 
-.navbar-nav .nav-item {
-    margin-right: 1.5rem;
-}
+    .dropdown-menu {
+        position: absolute;
+    }
 
-.navbar-toggler {
-    border: 0;
-    color: #222;
+    .nav-item {
+        margin-right: 1.5rem;
+
+        &:last-child {
+            margin-right: 0;
+        }        
+    }
 }
 
 /* Fix FOC as material icons load */
@@ -79,7 +78,7 @@ body {
 }
 
 .text-muted a {
-    color: rgba(0,0,0,.55);
+    color: #767676;
 }
 
 .ml-3-neg {
@@ -88,6 +87,10 @@ body {
 
 .mr-3-neg {
     margin-right: -20px;
+}
+
+.btn-group * {
+    flex-grow: 1 !important;
 }
 
 /* White content cards */
