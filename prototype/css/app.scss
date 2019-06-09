@@ -93,6 +93,15 @@ body {
     flex-grow: 1 !important;
 }
 
+/* Controls link underlines */
+a.no-decoration {
+    text-decoration: none;
+
+    &:hover .hover-underline {
+        text-decoration: underline;
+    }
+}
+
 /* White content cards */
 .card {
     border: 0;
