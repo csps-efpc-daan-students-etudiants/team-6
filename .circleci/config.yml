@@ -58,8 +58,10 @@ jobs:
             wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
             ENV=circleci npm test
       - store_artifacts:
-          path: /tmp/workspace/prototype/features
-          destination: features                        
+          path: /tmp/workspace/prototype/features/screenshots/error
+      - store_artifacts:
+          path: /tmp/workspace/prototype/features/reports         
+                     
 
   # Deploys the latest changes to the gh-pages branch
   deploy:
