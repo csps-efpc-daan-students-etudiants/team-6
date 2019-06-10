@@ -1,3 +1,5 @@
+[![circleci](https://img.shields.io/circleci/build/github/csps-efpc-daan-students-etudiants/team-6.svg)](https://circleci.com/gh/csps-efpc-daan-students-etudiants/team-6)
+
 # Prerequisite
 You will need [Node.js with npm](https://nodejs.org/en/download/) installed to build and run the project.
 
