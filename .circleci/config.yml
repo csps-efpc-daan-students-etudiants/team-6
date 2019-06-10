@@ -55,11 +55,10 @@ jobs:
       - run:
           name: Update the gh-pages branch
           command: |
-            ls -l
             git config user.email "ci-build@circleci.com"
             git config user.name "ci-build"
             git checkout --orphan gh-pages
-            git add -f dist
+            git add -f ./prototype/dist
             git commit -m "Update gh-pages"
             git push origin -f gh-pages
       - add_ssh_keys:
