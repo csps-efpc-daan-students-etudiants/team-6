@@ -55,6 +55,7 @@ jobs:
       - run:
           name: Update the gh-pages branch
           command: |
+            ls -l
             git config user.email "ci-build@circleci.com"
             git config user.name "ci-build"
             git checkout --orphan gh-pages
