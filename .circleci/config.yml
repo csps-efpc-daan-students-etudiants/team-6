@@ -24,6 +24,7 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Build the CSS/JS bundles
           command: |
             cd ./prototype
             npm install
@@ -39,9 +40,29 @@ jobs:
     steps:
       - *attach_workspace
       - run:
+          name: Run npm security audit
           command: |
             cd ./prototype
             npm audit
+
+  # Deploys the latest changes to the gh-pages branch
+  deploy:
+    docker:
+      - image: node:12.4.0
+    steps:
+      - *attach_workspace
+      - run:
+          name: Update the gh-pages branch
+          command: |
+            git config user.email "ci-build@circleci.com"
+            git config user.name "ci-build"
+            git checkout --orphan gh-pages
+            git add -f dist
+            git commit -m "Update gh-pages"
+            git push origin -f gh-pages
+      - add_ssh_keys:
+          fingerprints:
+            - "40:a9:24:16:e5:80:41:09:91:8a:9a:33:cd:4a:cc:f4"                
 
 # Define job flow, dependencies and filters (when the job should run)
 workflows:
@@ -52,4 +73,7 @@ workflows:
       - security_test:
           requires:
             - build
+      - deploy:
+          requires:
+            - build            
 
