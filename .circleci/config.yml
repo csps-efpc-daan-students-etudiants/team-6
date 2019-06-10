@@ -47,6 +47,7 @@ jobs:
 
   # Deploys the latest changes to the gh-pages branch
   deploy:
+    working_directory: /tmp/workspace
     docker:
       - image: node:12.4.0
     steps:
