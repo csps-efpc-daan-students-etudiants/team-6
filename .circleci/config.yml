@@ -53,13 +53,16 @@ jobs:
     steps:
       - *attach_workspace
       - run:
+          name: Avoid hosts unknown for github
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config      
+      - run:
           name: Update the gh-pages branch
           command: |
             git config user.email "ci-build@circleci.com"
             git config user.name "ci-build"
             git checkout --orphan gh-pages
             git add -f ./prototype/dist
-            git commit -m "Update gh-pages"
+            git commit -m "[skip ci] Update gh-pages"
             git push origin -f gh-pages
       - add_ssh_keys:
           fingerprints:
