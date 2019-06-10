@@ -22,7 +22,7 @@ Visual regression and accessibility testing is being done with [cucumber-puppete
 ```bash
 npm test
 ```
-If you make changes to the existing sceen layout, you will need to update the reference screenshots in:
+If you make changes to the screen layouts or CSS, you'll need to update the reference screenshots in:
 ```bash
 ./features/screenshots/ref
 ```
