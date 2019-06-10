@@ -53,6 +53,7 @@ jobs:
       - run:
           name: Behaviour tests
           command: |
+            cd ./prototype
             npm start &
             wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
             ENV=circleci npm test
