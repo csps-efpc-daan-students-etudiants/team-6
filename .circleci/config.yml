@@ -54,7 +54,10 @@ jobs:
       - *attach_workspace
       - run:
           name: Avoid hosts unknown for github
-          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config      
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - add_ssh_keys:
+          fingerprints:
+            - "40:a9:24:16:e5:80:41:09:91:8a:9a:33:cd:4a:cc:f4"           
       - run:
           name: Update the gh-pages branch
           command: |
@@ -64,9 +67,7 @@ jobs:
             git add -f ./prototype/dist
             git commit -m "[skip ci] Update gh-pages"
             git push origin -f gh-pages
-      - add_ssh_keys:
-          fingerprints:
-            - "40:a9:24:16:e5:80:41:09:91:8a:9a:33:cd:4a:cc:f4"                
+               
 
 # Define job flow, dependencies and filters (when the job should run)
 workflows:
