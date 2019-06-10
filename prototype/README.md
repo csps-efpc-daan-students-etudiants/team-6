@@ -7,14 +7,26 @@ Run the following to install the project dependencies:
 # Downloads all required dependencies
 npm install
 ```
-# Local development
+
+# Local dev
 You can use the Webpack dev server for local development on your machine:
 ```bash
 # Starts the Webpack dev server at http://localhost:8080
 npm start
 ```
 
-# Build production assets
+# Test
+Visual regression and accessibility testing is being done with [cucumber-puppeteer](https://github.com/patheard/cucumber-puppeteer) using the [`./features/visual/prototype.feature`](https://github.com/csps-efpc-daan-students-etudiants/team-6/blob/master/prototype/features/visual/prototype.feature) gherkin file.  You can run the tests with:
+```bash
+npm test
+```
+If you make changes to the existing sceen layout, you will need to update the reference screenshots in:
+```bash
+./features/screenshots/ref
+```
+The easiest way to do this is delete the reference screenshot and re-run the tests, which will cause a new reference screenshot to be created.
+
+# Build
 If you want to build the CSS/JS assets to deploy to a server, use:
 ```bash
 # Creates CSS/JS/font bundles in ./dist folder
