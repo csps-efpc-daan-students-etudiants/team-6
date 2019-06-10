@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cucumber-js ./features/visual/*.feature --require {./features/**/*.js,./node_modules/cucumber-puppeteer/features/**/*.js} --format ./node_modules/cucumber-puppeteer/features/support/util/PrettyFormatter"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "css-loader": "^2.1.1",
+    "cucumber-puppeteer": "^1.0.10",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.0.0",
     "node-sass": "^4.12.0",

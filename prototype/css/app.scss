@@ -106,6 +106,21 @@ a.no-decoration {
     }
 }
 
+/* a11y contrast fixes */
+a,
+.btn-outline-primary {
+    color: #006de2;
+}
+
+.btn-primary {
+    background-color: #006de2;
+}
+
+.btn-outline-success {
+    color: #14822d;
+    border-color: #168630;
+}
+
 /* White content cards */
 .card {
     border: 0;

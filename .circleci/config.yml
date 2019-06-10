@@ -45,6 +45,21 @@ jobs:
             cd ./prototype
             npm audit
 
+  # Behaviour tests against locally running service using Cucumber-js and Puppeteer
+  behaviour_test:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - run:
+          name: Behaviour tests
+          command: |
+            npm start &
+            wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
+            ENV=circleci npm test
+      - store_artifacts:
+          path: /tmp/workspace/prototype/features
+          destination: features                        
+
   # Deploys the latest changes to the gh-pages branch
   deploy:
     working_directory: /tmp/workspace
@@ -77,10 +92,15 @@ workflows:
       - build
       - security_test:
           requires:
+            - build      
+      - behaviour_test:
+          requires:
             - build
       - deploy:
           requires:
             - build
+            - security_test
+            - behaviour_test
           filters:
             branches:
               only: master                      
