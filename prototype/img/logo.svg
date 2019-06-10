@@ -1,4 +1,4 @@
-<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="188" height="188" viewBox="0 0 188 188">
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="940" height="940" viewBox="0 0 188 188">
   <defs>
     <style>
       .cls-1, .cls-4 {
@@ -30,6 +30,6 @@
   <circle id="circle" class="cls-1" cx="93.563" cy="93.531" r="93.063"/>
   <path id="leaf_foreground" data-name="leaf foreground" class="cls-2" d="M147.122,53.87s2.271,26.849-15.731,44.85c-14.827,14.827-38.383,7.677-38.383,7.677s-5.564-25.143,7.677-38.384C115.512,53.186,147.122,53.87,147.122,53.87Z"/>
   <path id="leaf_background" data-name="leaf background" class="cls-3" d="M39.878,71.87s-2.271,26.849,15.731,44.85c14.827,14.827,38.383,7.677,38.383,7.677s5.564-25.143-7.677-38.384C71.488,71.186,39.878,71.87,39.878,71.87Z"/>
-  <path id="veins" class="cls-4" d="M94.937,119.224l-2.094,1.525L47.909,82.783,50,81.257Zm-46-38.505a1.25,1.25,0,1,1-1.25,1.25A1.25,1.25,0,0,1,48.938,80.719Z"/>
+  <path id="veins" class="cls-4" d="M94.937,119.224l-2.094,1.525L47.909,82.783l0.065-.047a1.226,1.226,0,0,1-.287-0.766,1.25,1.25,0,0,1,1.25-1.25,1.228,1.228,0,0,1,1.022.57L50,81.257Z"/>
   <path id="stem" class="cls-2" d="M96.663,151.488a2.484,2.484,0,0,1-4.919,0H91.681V93.779H96.7v57.709H96.663Z"/>
 </svg>
