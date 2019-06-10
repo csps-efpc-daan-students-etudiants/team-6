@@ -14,5 +14,8 @@ Goals:
 * allow an organizatino to guage the progress of their learners and develop a skills inventory; and
 * provide richer data to look for training impact.
 
+# Prototype
+We developed clickable mockups of the [evaulation app and student dashboard](https://csps-efpc-daan-students-etudiants.github.io/team-6/prototype/) to start user testing.  The next stage would be to hook these mockups to a quiz engine so we could start collection real user data about learner performance.
+
 # Contributions
 Feedback, comments and questions are welcome through [issues](https://github.com/csps-efpc-daan-students-etudiants/team-6/issues/new) or a [pull request](https://github.com/csps-efpc-daan-students-etudiants/team-6/pulls).
