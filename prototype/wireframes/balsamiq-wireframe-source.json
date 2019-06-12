@@ -1,0 +1,169 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "typeID": "iPhone",
+                    "zOrder": "0",
+                    "measuredW": "436",
+                    "measuredH": "867",
+                    "x": "710",
+                    "y": "64",
+                    "properties": {
+                        "model": "IPhoneX",
+                        "resizing": "stretch"
+                    }
+                },
+                {
+                    "ID": "3",
+                    "typeID": "Paragraph",
+                    "zOrder": "1",
+                    "w": "334",
+                    "h": "110",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "761",
+                    "y": "240",
+                    "properties": {
+                        "text": "What data type is \n*January 9, 2019*?",
+                        "size": "24"
+                    }
+                },
+                {
+                    "ID": "11",
+                    "typeID": "Label",
+                    "zOrder": "2",
+                    "measuredW": "92",
+                    "measuredH": "32",
+                    "x": "761",
+                    "y": "142",
+                    "properties": {
+                        "text": "EvalApp",
+                        "size": "24",
+                        "bold": "true"
+                    }
+                },
+                {
+                    "ID": "12",
+                    "typeID": "Icon",
+                    "zOrder": "3",
+                    "measuredW": "32",
+                    "measuredH": "32",
+                    "x": "1059",
+                    "y": "142",
+                    "properties": {
+                        "icon": {
+                            "ID": "bars",
+                            "size": "medium"
+                        }
+                    }
+                },
+                {
+                    "ID": "14",
+                    "typeID": "RadioButtonGroup",
+                    "zOrder": "4",
+                    "measuredW": "145",
+                    "measuredH": "127",
+                    "x": "761",
+                    "y": "338",
+                    "properties": {
+                        "text": "(o) Real\n( ) Integer\n( ) Boolean\n( ) Categorical",
+                        "size": "24"
+                    }
+                },
+                {
+                    "ID": "15",
+                    "typeID": "HRule",
+                    "zOrder": "5",
+                    "w": "388",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "734",
+                    "y": "190"
+                },
+                {
+                    "ID": "17",
+                    "typeID": "Paragraph",
+                    "zOrder": "6",
+                    "w": "334",
+                    "h": "110",
+                    "measuredW": "275",
+                    "measuredH": "80",
+                    "x": "761",
+                    "y": "503",
+                    "properties": {
+                        "text": "Why would it be helpful to convert it to a numeric type?",
+                        "size": "24"
+                    }
+                },
+                {
+                    "ID": "18",
+                    "typeID": "TextInput",
+                    "zOrder": "7",
+                    "w": "333",
+                    "measuredW": "79",
+                    "measuredH": "38",
+                    "x": "761",
+                    "y": "584",
+                    "properties": {
+                        "text": "",
+                        "size": "24",
+                        "borderStyle": "rectangle",
+                        "state": "up"
+                    }
+                },
+                {
+                    "ID": "19",
+                    "typeID": "ProgressBar",
+                    "zOrder": "8",
+                    "w": "334",
+                    "h": "21",
+                    "measuredW": "100",
+                    "measuredH": "10",
+                    "x": "761",
+                    "y": "829",
+                    "properties": {
+                        "style": "thin",
+                        "indeterminate": "false",
+                        "scrollBarValue": "71",
+                        "color": "6710886"
+                    }
+                },
+                {
+                    "ID": "20",
+                    "typeID": "Label",
+                    "zOrder": "9",
+                    "measuredW": "98",
+                    "measuredH": "21",
+                    "x": "996",
+                    "y": "850",
+                    "properties": {
+                        "text": "Question 7 of 10"
+                    }
+                },
+                {
+                    "ID": "21",
+                    "typeID": "ButtonBar",
+                    "zOrder": "10",
+                    "w": "334",
+                    "h": "38",
+                    "measuredW": "197",
+                    "measuredH": "38",
+                    "x": "761",
+                    "y": "775",
+                    "properties": {
+                        "text": "Previous, Next",
+                        "selectedIndex": "-1",
+                        "size": "24"
+                    }
+                }
+            ]
+        },
+        "mockupH": "867",
+        "mockupW": "436",
+        "measuredW": "1146",
+        "measuredH": "931",
+        "version": "1.0"
+    }
+}

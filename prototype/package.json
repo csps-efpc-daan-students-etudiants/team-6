@@ -1,0 +1,46 @@
+{
+  "name": "prototype",
+  "version": "1.0.0",
+  "description": "Prototyping evaulation app and data visualization dashboard",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack-dev-server --mode=development",
+    "test": "npx cucumber-js ./features/visual/*.feature --require {./features/**/*.js,./node_modules/cucumber-puppeteer/features/**/*.js} --format ./node_modules/cucumber-puppeteer/features/support/util/PrettyFormatter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csps-efpc-daan-students-etudiants/team-6.git"
+  },
+  "keywords": [
+    "education",
+    "data-visualization"
+  ],
+  "author": "Pat Heard (patrick.heard@tpsgc-pwgsc.gc.ca)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csps-efpc-daan-students-etudiants/team-6/issues"
+  },
+  "homepage": "https://github.com/csps-efpc-daan-students-etudiants/team-6/README.md",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
+    "jquery": "^3.4.1",
+    "material-icons": "^0.3.1",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "css-loader": "^2.1.1",
+    "cucumber-puppeteer": "^1.0.10",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.0.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.7.0"
+  }
+}

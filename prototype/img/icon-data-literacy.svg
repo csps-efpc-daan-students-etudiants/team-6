@@ -1,0 +1,64 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="940" height="940" viewBox="0 0 188 188">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: #33b873;
+      }
+
+      .cls-1 {
+        filter: url(#filter);
+      }
+
+      .cls-2, .cls-6, .cls-7, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-6, .cls-7, .cls-8 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #60d698;
+      }
+
+      .cls-5 {
+        fill: #4c28b4;
+        filter: url(#filter-2);
+      }
+
+      .cls-6 {
+        opacity: 0.3;
+      }
+
+      .cls-7 {
+        opacity: 0.5;
+      }
+
+      .cls-8 {
+        opacity: 0.7;
+      }
+    </style>
+    <filter id="filter" x="0.5" y="0.5" width="186.125" height="186.063" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="0.5" y="0.5" width="186.125" height="186.063" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTg2LjEyNSIgaGVpZ2h0PSIxODYuMDYzIiB2aWV3Qm94PSIwIDAgMTg2LjEyNSAxODYuMDYzIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBvcGFjaXR5OiAwLjIxOwogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iOTMuMDYzIiB5MT0iMTg2LjA2MyIgeDI9IjkzLjA2MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwMGZmNDIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDBmZjQyIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE4Ni4xMjUiIGhlaWdodD0iMTg2LjA2MyIvPgo8L3N2Zz4K"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="0.844" y="0.844" width="186.125" height="186.062" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="0.84375" y="0.84375" width="186.125" height="186.062" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTg2LjEyNSIgaGVpZ2h0PSIxODYuMDYyIiB2aWV3Qm94PSIwIDAgMTg2LjEyNSAxODYuMDYyIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjkzLjA2MyIgeTE9IjE4Ni4wNjIiIHgyPSI5My4wNjMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjM2MwMGZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzNjMDBmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIxODYuMTI1IiBoZWlnaHQ9IjE4Ni4wNjIiLz4KPC9zdmc+Cg=="/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <circle id="circle" class="cls-1" cx="93.563" cy="93.531" r="93.063"/>
+  <path id="leaf_foreground" data-name="leaf foreground" class="cls-2" d="M147.122,53.87s2.271,26.849-15.731,44.85c-14.827,14.827-38.383,7.677-38.383,7.677s-5.564-25.143,7.677-38.384C115.512,53.186,147.122,53.87,147.122,53.87Z"/>
+  <path id="leaf_background" data-name="leaf background" class="cls-3" d="M39.878,71.87s-2.271,26.849,15.731,44.85c14.827,14.827,38.383,7.677,38.383,7.677s5.564-25.143-7.677-38.384C71.488,71.186,39.878,71.87,39.878,71.87Z"/>
+  <path id="veins" class="cls-4" d="M94.937,119.224l-2.094,1.525L47.909,82.783,50,81.257Zm-46-38.505a1.25,1.25,0,1,1-1.25,1.25A1.25,1.25,0,0,1,48.938,80.719Z"/>
+  <path id="stem" class="cls-2" d="M96.663,151.488a2.484,2.484,0,0,1-4.919,0H91.681V93.779H96.7v57.709H96.663Z"/>
+  <circle id="circle-2" data-name="circle" class="cls-5" cx="93.906" cy="93.875" r="93.063"/>
+  <g id="pie">
+    <path id="segment_xs" data-name="segment xs" class="cls-6" d="M118.59,66.915a35.87,35.87,0,0,0-22.923-9.29V37.019a56.283,56.283,0,0,1,37.7,15.117Z"/>
+    <path id="segment_sm" data-name="segment sm" class="cls-7" d="M135.449,132.485l-14.188-14.139a36,36,0,0,0,.2-48.808l14.6-14.6A56.405,56.405,0,0,1,135.449,132.485Z"/>
+    <path id="segment_md" data-name="segment md" class="cls-8" d="M118.1,120.847l14.629,14.579a56.409,56.409,0,0,1-76.708-.955L70.19,120.305A36.023,36.023,0,0,0,118.1,120.847Z"/>
+    <path id="segment_lg" data-name="segment lg" class="cls-2" d="M58.406,93.647a35.9,35.9,0,0,0,8.986,23.8L53.219,131.62A56.459,56.459,0,0,1,92.083,37.1V57.683A36.046,36.046,0,0,0,58.406,93.647Z"/>
+  </g>
+</svg>

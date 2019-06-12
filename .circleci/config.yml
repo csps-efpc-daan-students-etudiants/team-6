@@ -1,0 +1,110 @@
+version: 2
+
+# Reusable blocks for our Docker image and workspace config
+references:
+  container_config: &container_config
+    docker:
+      - image: patheard/node-puppeteer:latest # Node with headless Chrome dependencies
+    working_directory: /tmp/workspace
+  steps:
+    - &persist_to_workspace
+      persist_to_workspace:
+        root: /tmp/workspace
+        paths:
+          - . # Save the entire working directory
+    - &attach_workspace
+      attach_workspace:
+        at: /tmp/workspace
+
+jobs:
+
+  # In stall project dependencies and cache
+  build:
+    <<: *container_config
+    steps:
+      - checkout
+      - run:
+          name: Build the CSS/JS bundles
+          command: |
+            cd ./prototype
+            npm install
+            npm run build
+      - store_artifacts:
+          path: /tmp/workspace/prototype/dist
+          destination: dist            
+      - *persist_to_workspace
+
+  # Security audits with npm audit
+  security_test:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - run:
+          name: Run npm security audit
+          command: |
+            cd ./prototype
+            npm audit
+
+  # Behaviour tests against locally running service using Cucumber-js and Puppeteer
+  behaviour_test:
+    <<: *container_config
+    steps:
+      - *attach_workspace
+      - run:
+          name: Behaviour tests
+          command: |
+            cd ./prototype
+            npm start &
+            wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
+            ENV=circleci npm test
+      - store_artifacts:
+          path: /tmp/workspace/prototype/features/screenshots/error
+      - store_artifacts:
+          path: /tmp/workspace/prototype/features/reports         
+                     
+
+  # Deploys the latest changes to the gh-pages branch
+  deploy:
+    working_directory: /tmp/workspace
+    docker:
+      - image: node:12.4.0
+    steps:
+      - *attach_workspace
+      - run:
+          name: Avoid hosts unknown for github
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+      - add_ssh_keys:
+          fingerprints:
+            - "40:a9:24:16:e5:80:41:09:91:8a:9a:33:cd:4a:cc:f4"           
+      - run:
+          name: Update the gh-pages branch
+          command: |
+            git config user.email "ci-build@circleci.com"
+            git config user.name "ci-build"
+            git checkout --orphan gh-pages
+            git add -f ./prototype/dist
+            git commit -m "[skip ci] Update gh-pages"
+            git push origin -f gh-pages
+               
+
+# Define job flow, dependencies and filters (when the job should run)
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
+      - security_test:
+          requires:
+            - build      
+      - behaviour_test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - build
+            - security_test
+            - behaviour_test
+          filters:
+            branches:
+              only: master                      
+
